@@ -199,7 +199,11 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 1.58;
 }
 .developer-notes strong { display: block; margin-bottom: 5px; color: #991b1b; font-size: .82rem; letter-spacing: .01em; }
-.developer-notes p { margin-bottom: 0; }
+.developer-notes p { margin: 0 0 8px; }
+.developer-notes p:last-child { margin-bottom: 0; }
+.developer-notes ul { margin: 8px 0 0; padding-left: 20px; }
+.developer-notes li { margin: 4px 0; }
+.developer-notes b { color: #7f1d1d; }
 
 @media (max-width: 900px) {
   .topbar { position: relative; top: auto; }
@@ -343,83 +347,6 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 980px) { .performance-hero,.trend-grid,.analysis-grid,.dialog-grid { grid-template-columns: 1fr; } .dialog-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); } .chart-toolbar { align-items: flex-start; flex-direction: column; } }
 @media (max-width: 760px) { .history-head { align-items: flex-start; flex-direction: column; } .history-controls { width: 100%; } .control { flex: 1 1 180px; } .control select { width: 100%; } .table-wrap { display: none; } .mobile-attempts { display: grid; } }
 @media (max-width: 650px) { .comparison-row,.topic-row { grid-template-columns: minmax(0,1fr) auto; } .comparison-row .progress-track,.topic-row .progress-track { grid-column: 1 / -1; grid-row: 2; } .performance-hero { margin-top: 16px; padding: 29px 21px; border-radius: 25px; } .performance-hero h1 { font-size: clamp(2.35rem,12vw,3.8rem); } .hero-metrics,.dialog-kpis { grid-template-columns: 1fr; } .history-card,.trend-card,.analysis-panel { border-radius: 20px; } .mobile-attempt-stats { grid-template-columns: 1fr; } .result-dialog { width: calc(100% - 14px); max-height: calc(100vh - 14px); border-radius: 18px; } .dialog-shell { max-height: calc(100vh - 14px); } .dialog-body { padding: 14px; } }
-
-
-/* Professional interface finishing pass */
-html { color-scheme: light; }
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-main, section, article, aside, nav { min-width: 0; }
-.topbar {
-  border-color: rgba(203, 213, 225, .9);
-  box-shadow: 0 14px 38px rgba(15, 23, 42, .075);
-}
-.brand-copy strong { letter-spacing: -.025em; }
-.nav a, .nav .logout-button { letter-spacing: -.01em; }
-.card { border-color: rgba(203, 213, 225, .82); }
-.developer-notes {
-  box-shadow: 0 10px 28px rgba(127, 29, 29, .06);
-}
-.developer-notes > strong {
-  margin-bottom: 10px;
-  font-size: .88rem;
-}
-.developer-notes ul {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding-left: 1.2rem;
-}
-.developer-notes li { padding-left: 2px; }
-.developer-notes b { color: #7f1d1d; }
-.developer-notes code {
-  padding: 1px 5px;
-  border: 1px solid #fecaca;
-  border-radius: 6px;
-  background: rgba(255,255,255,.72);
-  color: #7f1d1d;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: .92em;
-  overflow-wrap: anywhere;
-}
-@media (max-width: 1120px) and (min-width: 901px) {
-  .nav a, .nav .logout-button { padding-inline: 10px; font-size: .78rem; }
-}
-@media (max-width: 900px) {
-  .nav { max-height: min(70vh, 430px); overflow-y: auto; overscroll-behavior: contain; }
-}
-@media (max-width: 480px) {
-  .shell { width: min(100% - 16px, 1220px); }
-  .topbar { padding-inline: 10px; }
-  .logo { width: 42px; height: 42px; border-radius: 14px; }
-  .developer-notes { margin-top: 26px; border-radius: 15px; font-size: .74rem; }
-}
-@media (forced-colors: active) {
-  .topbar, .card, .developer-notes { border: 1px solid CanvasText; }
-  .nav a.active, .primary-button, .card-action, .view-button { forced-color-adjust: none; }
-}
-
-
-.history-card, .trend-card, .analysis-panel {
-  border-color: rgba(203, 213, 225, .86);
-  box-shadow: 0 12px 34px rgba(15,23,42,.07);
-}
-.history-head { background: linear-gradient(180deg,#fff,#fbfcff); }
-.view-button { min-height: 38px; padding-inline: 12px; }
-.metric-tile { border-top: 3px solid #d8e5fb; }
-@media (max-width: 820px) {
-  .table-wrap { display: none; }
-  .mobile-attempts { display: grid; }
-}
-@media (max-width: 480px) {
-  .mobile-attempt-stats { grid-template-columns: 1fr 1fr; }
-  .mobile-attempt-stats div:last-child { grid-column: 1 / -1; }
-  .dialog-body { padding: 15px; }
-}
-
 </style>
 </head>
 <body data-page="performance">
@@ -445,7 +372,7 @@ main, section, article, aside, nav { min-width: 0; }
 <main>
   <section class="performance-hero" aria-labelledby="pageTitle">
     <div><div class="eyebrow">Exam data only</div><h1 id="pageTitle">My Performance</h1><p class="lead">Review every completed exam attempt, open the stored feedback, and compare raw-score progress across Maths, English, Verbal Reasoning and Non-Verbal Reasoning.</p></div>
-    <aside class="hero-metrics" aria-label="Performance summary"><div class="hero-metric"><strong data-total-attempts>0</strong><span>completed exam attempts</span></div><div class="hero-metric"><strong data-net-performance>—</strong><span>overall performance</span></div><div class="hero-metric"><strong data-net-improvement>—</strong><span>average score change</span></div><div class="hero-metric"><strong data-latest-result>—</strong><span>latest exam result</span></div></aside>
+    <aside class="hero-metrics" aria-label="Performance summary"><div class="hero-metric"><strong data-total-attempts>0</strong><span>completed exam attempts</span></div><div class="hero-metric"><strong data-net-performance>—</strong><span>net performance</span></div><div class="hero-metric"><strong data-net-improvement>—</strong><span>average improvement</span></div><div class="hero-metric"><strong data-latest-result>—</strong><span>latest exam result</span></div></aside>
   </section>
 
   <section class="card history-card" aria-labelledby="historyTitle">
@@ -470,14 +397,11 @@ main, section, article, aside, nav { min-width: 0; }
 
 <dialog class="result-dialog" id="attemptDialog" aria-labelledby="dialogTitle"><div class="dialog-shell"><div class="dialog-head"><div><h2 id="dialogTitle">Exam result</h2><p id="dialogSubtitle"></p></div><form method="dialog"><button class="dialog-close" type="submit" aria-label="Close results">×</button></form></div><div class="dialog-body" id="dialogBody"></div></div></dialog>
 
-<aside class="developer-notes" aria-label="Developer notes"><strong>Developer notes — do not include on real pages</strong><ul>
-  <li><b>Data entering this page:</b> exam attempts only. Each record should include <code>id</code>, <code>date</code>, <code>subject</code>, <code>paper</code>, <code>paperId</code>, <code>score</code>, <code>total</code>, <code>answered</code>, <code>durationMinutes</code>, <code>allocatedMinutes</code>, <code>topics</code>, <code>strengths</code>, <code>areasToImprove</code>, <code>feedback</code> and the stored question review containing prompt/topic, learner answer, correct answer, mark outcome and feedback.</li>
-  <li><b>Current source:</b> compatible attempt arrays are read from <code>window.MATHBASE_EXAM_ATTEMPTS</code> or browser storage; the included sample attempts and generated question examples are used only when no live records exist. In production, query the Cloudways API by the authenticated learner ID and return attempts in completion-date order.</li>
-  <li><b>Required links:</b> the header links to Dashboard, Practice, Exams, My Performance and Log out. Log out returns to <code>https://mathbase1.github.io/11plus-pem/</code>. Each View results control opens only the stored attempt selected by its unique ID; it should not launch or alter an exam.</li>
-  <li><b>How saved student data updates this page:</b> filters, attempt table/cards, subject graph, latest comparison, topic priorities and result dialog are rebuilt from the current attempt array. A newly saved exam should appear after an API refresh, page reload or application event; edits or deletions should trigger the same rebuild so totals and graphs remain consistent.</li>
-  <li><b>Calculation rules:</b> overall performance is total raw marks earned divided by total marks available; score change compares percentage scores within the same subject; graph points use completion date and percentage; priorities use averages of stored topic percentages. All logic is deterministic JavaScript and does not use AI.</li>
-  <li><b>Production hand-off:</b> enforce learner ownership on every result request, paginate long histories, preserve immutable raw exam records and question feedback, and remove all sample fallback data and this red box before release.</li>
-</ul></aside>
+<aside class="developer-notes"><strong>Developer notes — do not include on real pages</strong>
+<p><b>Prototype inputs:</b> this page scans compatible browser-storage records and otherwise uses labelled sample exam attempts. Its totals, changes, filters, graphs and priorities are deterministic JavaScript calculations and do not use AI.</p>
+<p><b>Suggested production data contract:</b> fetch exam attempts for the authenticated account from the backend. Each record should include attempt ID, exam ID and version, subject, completion date, raw score, available marks, percentage, answered and unanswered counts, duration, topic-level totals, question-level answers, correct answers and stored feedback.</p>
+<p><b>Update flow:</b> refresh after a successful exam submission, when filters change, on page load and when the backend result version changes. Paginate large histories and perform account ownership checks on every attempt-detail request. Never trust a learner ID supplied by the browser.</p>
+<p><b>Production access:</b> protect summary and attempt-detail APIs with the real authenticated session. Logout must revoke that session and return to the production login route. The current GitHub destinations exist only to demonstrate this prototype.</p></aside>
 </div>
   <script>
 const MATHBASE_ROUTES = Object.freeze({"dashboard": "https://mathbase1.github.io/11-plus-dashboard/", "practice": "https://mathbase1.github.io/11-plus-practice-menu/", "exams": "https://mathbase1.github.io/11-plus-exams-menu/", "performance": "https://mathbase1.github.io/data/", "login": "https://mathbase1.github.io/11plus-pem/", "mathsPractice": "https://mathbase1.github.io/11plus-practice-quest/", "englishPractice": "https://mathbase1.github.io/eleven-plus-English-practice/", "verbalPractice": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/", "nonverbalPractice": "https://mathbase1.github.io/nvr-prac/", "mathsExam": "https://mathbase1.github.io/11plus-exam/", "englishExam": "https://mathbase1.github.io/eleven-plus-English-exam/", "verbalExam": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/", "nonverbalExam": "https://mathbase1.github.io/nvr-exam/"});
@@ -506,15 +430,7 @@ function logOutMathBase(event) {
 }
 
 function greetingForCurrentTime() {
-  let hour = new Date().getHours();
-  try {
-    const part = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/London",
-      hour: "2-digit",
-      hour12: false
-    }).formatToParts(new Date()).find((item) => item.type === "hour");
-    if (part) hour = Number(part.value) % 24;
-  } catch (error) { /* Use the device hour when time-zone formatting is unavailable. */ }
+  const hour = new Date().getHours();
   if (hour < 12) return "Good morning";
   if (hour < 18) return "Good afternoon";
   return "Good evening";
@@ -522,15 +438,11 @@ function greetingForCurrentTime() {
 
 function hydrateCommonUI() {
   const profile = readMathBaseProfile();
-  const username = String(profile.username || profile.name || "CK223");
+  const username = String(profile.username || profile.name || "Learner");
   document.querySelectorAll("[data-username]").forEach((element) => { element.textContent = username; });
   document.querySelectorAll("[data-greeting]").forEach((element) => { element.textContent = greetingForCurrentTime(); });
   document.querySelectorAll("[data-user-initials]").forEach((element) => {
-    const parts = username.split(/[\s._-]+/).filter(Boolean);
-    const compact = username.replace(/[^a-z0-9]/gi, "").toUpperCase();
-    const letters = parts.length > 1
-      ? parts.slice(0, 2).map((part) => part.charAt(0).toUpperCase()).join("")
-      : compact.slice(0, 2) || "CK";
+    const letters = username.split(/[\s._-]+/).filter(Boolean).slice(0,2).map((part) => part.charAt(0).toUpperCase()).join("") || "L";
     element.textContent = letters;
   });
 }
@@ -691,13 +603,7 @@ function percentageOf(attempt) { return attempt && attempt.total ? (Number(attem
 function average(values) { return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : 0; }
 function round(value, places = 0) { const factor = 10 ** places; return Math.round((Number(value) + Number.EPSILON) * factor) / factor; }
 function clamp(value, min, max) { return Math.min(max, Math.max(min, value)); }
-function signed(value) {
-  const numeric = round(value, 1);
-  if (!Number.isFinite(numeric)) return "—";
-  if (numeric === 0) return "No change";
-  const magnitude = Math.abs(numeric);
-  return `${numeric > 0 ? "Up" : "Down"} ${magnitude} percentage ${magnitude === 1 ? "point" : "points"}`;
-}
+function signed(value, suffix = " pp") { const numeric = round(value, 1); if (!Number.isFinite(numeric)) return "—"; return `${numeric > 0 ? "+" : ""}${numeric}${suffix}`; }
 function formatDate(value, short = false) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "—";
@@ -832,7 +738,7 @@ function renderTrend() {
     <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.average) + "%" : "—"}</strong><span>Average across ${metrics.list.length} attempt${metrics.list.length === 1 ? "" : "s"}</span></div>
     <div class="metric-tile"><strong>${metrics.list.length > 1 ? signed(metrics.improvement) : "Baseline"}</strong><span>First-to-latest improvement</span></div>
     <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.best) + "%" : "—"}</strong><span>Best recorded result</span></div>
-    <div class="metric-tile"><strong>${metrics.list.length ? `${round(metrics.range,1)} percentage ${round(metrics.range,1) === 1 ? "point" : "points"}` : "—"}</strong><span>Score range</span></div>
+    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.range,1) + " pp" : "—"}</strong><span>Score range</span></div>
     <div class="metric-tile"><strong>${Number.isFinite(metrics.averageTime) ? formatDuration(metrics.averageTime) : "—"}</strong><span>Average time used</span></div>`;
 }
 
