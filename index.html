@@ -1,13 +1,11 @@
-
-
 <!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b214a">
-  <meta name="description" content="Exam-only learner performance history with raw scores, subject graphs, topic priorities and stored feedback.">
-  <title>My Performance | MathBase Prep</title>
+  <meta name="description" content="Explore the PEM 11 Plus performance preview with illustrative sample scores, subject graphs, topic priorities and example feedback. No real learner results are displayed.">
+  <title>My Performance Preview | PEM 11 Plus</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -189,24 +187,8 @@ h1, h2, h3, p { margin-top: 0; }
 .primary-button svg { flex: 0 0 auto; width: 17px; height: 17px; }
 .primary-button:hover { transform: translateY(-2px); background: var(--navy-dark); box-shadow: 0 15px 32px rgba(23,59,130,.26); }
 
-.developer-notes {
-  margin-top: 34px;
-  padding: 18px 20px;
-  border: 2px dashed #dc2626;
-  border-radius: 18px;
-  background: #fff1f2;
-  color: #7f1d1d;
-  font-size: .78rem;
-  line-height: 1.58;
-}
-.developer-notes strong { display: block; margin-bottom: 5px; color: #991b1b; font-size: .82rem; letter-spacing: .01em; }
-.developer-notes p { margin: 0 0 8px; }
-.developer-notes p:last-child { margin-bottom: 0; }
-.developer-notes ul { margin: 8px 0 0; padding-left: 20px; }
-.developer-notes li { margin: 4px 0; }
-.developer-notes b { color: #7f1d1d; }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .topbar { position: relative; top: auto; }
   .menu-toggle { display: grid; }
   .nav-wrap { margin-left: auto; }
@@ -231,7 +213,6 @@ h1, h2, h3, p { margin-top: 0; }
   .topbar { min-height: 64px; border-radius: 18px; }
   .brand-copy span { display: none; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 9px; }
-  .developer-notes { padding: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -348,16 +329,62 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 980px) { .performance-hero,.trend-grid,.analysis-grid,.dialog-grid { grid-template-columns: 1fr; } .dialog-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); } .chart-toolbar { align-items: flex-start; flex-direction: column; } }
 @media (max-width: 760px) { .history-head { align-items: flex-start; flex-direction: column; } .history-controls { width: 100%; } .control { flex: 1 1 180px; } .control select { width: 100%; } .table-wrap { display: none; } .mobile-attempts { display: grid; } }
 @media (max-width: 650px) { .comparison-row,.topic-row { grid-template-columns: minmax(0,1fr) auto; } .comparison-row .progress-track,.topic-row .progress-track { grid-column: 1 / -1; grid-row: 2; } .performance-hero { margin-top: 16px; padding: 29px 21px; border-radius: 25px; } .performance-hero h1 { font-size: clamp(2.35rem,12vw,3.8rem); } .hero-metrics,.dialog-kpis { grid-template-columns: 1fr; } .history-card,.trend-card,.analysis-panel { border-radius: 20px; } .mobile-attempt-stats { grid-template-columns: 1fr; } .result-dialog { width: calc(100% - 14px); max-height: calc(100vh - 14px); border-radius: 18px; } .dialog-shell { max-height: calc(100vh - 14px); } .dialog-body { padding: 14px; } }
+
+.brand-actions { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.brand-actions .brand-copy strong { white-space: nowrap; }
+.brand-actions .brand-copy span { display: block; color: var(--red); font-weight: 800; }
+.price-plans-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  flex: 0 0 auto; min-height: 44px; max-width: 100%; padding: 10px 13px;
+  border: 1px solid var(--navy); border-radius: 12px; background: var(--navy);
+  color: #fff; font-size: .8rem; font-weight: 800; line-height: 1.3;
+  white-space: nowrap; box-shadow: 0 7px 18px rgba(23,59,130,.18);
+  transition: background 160ms ease, transform 160ms ease;
+}
+.price-plans-button svg { width: 16px; height: 16px; flex: 0 0 auto; }
+.price-plans-button:hover { background: var(--navy-dark); transform: translateY(-1px); }
+.sample-preview-notice {
+  display: flex; align-items: flex-start; gap: 12px; margin-top: 18px; padding: 15px 18px;
+  border: 1px solid #f2b8b5; border-left: 5px solid var(--red); border-radius: 16px;
+  background: #fff5f4; color: #9b2119;
+}
+.sample-preview-notice > svg { flex: 0 0 auto; width: 23px; height: 23px; margin-top: 1px; }
+.sample-preview-notice > div { min-width: 0; }
+.sample-preview-notice strong { display: block; font-size: .9rem; font-weight: 900; line-height: 1.4; letter-spacing: .045em; }
+.sample-preview-notice p { margin: 4px 0 0; font-size: .86rem; font-weight: 650; line-height: 1.55; }
+@media (max-width: 540px) {
+  .brand-actions { flex-direction: column; align-items: flex-start; gap: 11px; }
+  .topbar > .nav-wrap { align-self: flex-start; }
+  .brand-actions .brand { gap: 9px; }
+  .brand-actions .brand-copy span { font-size: .66rem; }
+  .sample-preview-notice { gap: 9px; padding: 13px 12px; }
+  .sample-preview-notice strong { font-size: .82rem; }
+  .sample-preview-notice p { font-size: .82rem; }
+}
+
+.sample-dialog-note {
+  margin: 0 0 16px; padding: 12px 14px; border: 1px solid #f2b8b5;
+  border-left: 4px solid var(--red); border-radius: 12px;
+  background: #fff5f4; color: #9b2119; font-size: .8rem; line-height: 1.55;
+}
+.sample-dialog-note strong { display: block; margin-bottom: 3px; font-weight: 900; }
+.sample-review-note { margin: 16px 0 8px; color: var(--muted); font-size: .75rem; line-height: 1.55; }
 </style>
 </head>
 <body data-page="performance">
   <div class="shell">
 
 <header class="topbar">
-  <a class="brand" href="https://mathbase1.github.io/11-plus-dashboard/" data-track="Dashboard brand" aria-label="MathBase Prep dashboard">
-    <span class="logo" aria-hidden="true">11+</span>
-    <span class="brand-copy"><strong>MathBase Prep</strong><span>11+ learner portal</span></span>
-  </a>
+  <div class="brand-actions">
+    <a class="brand" href="https://mathbase1.github.io/11-plus-dashboard/" data-track="Dashboard brand" aria-label="PEM 11 Plus dashboard">
+      <span class="logo" aria-hidden="true">11+</span>
+      <span class="brand-copy"><strong>PEM 11 Plus</strong><span>Sample product preview</span></span>
+    </a>
+    <a class="price-plans-button" href="https://www.pemtutoring.com/11plus/#pricing" data-track="See Price Plans">
+      <span>See Price Plans</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
   <div class="nav-wrap">
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
     <nav class="nav" id="primaryNav" aria-label="Primary navigation">
@@ -372,38 +399,37 @@ h1, h2, h3, p { margin-top: 0; }
 </header>
 
 <main>
+  <aside class="sample-preview-notice" role="note" aria-labelledby="samplePreviewTitle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7h.01"></path></svg>
+    <div><strong id="samplePreviewTitle">SAMPLE PRODUCT PREVIEW</strong><p>You are exploring a sample of PEM 11 Plus, not the full product. All scores, dates, timings, graphs and feedback shown are illustrative sample data, not real learner results. Select “See Price Plans” to view options for full access.</p></div>
+  </aside>
   <section class="performance-hero" aria-labelledby="pageTitle">
-    <div><div class="eyebrow">Exam data only</div><h1 id="pageTitle">My Performance</h1><p class="lead">Review every completed exam attempt, open the stored feedback, and compare raw-score progress across Maths, English, Verbal Reasoning and Non-Verbal Reasoning.</p></div>
-    <aside class="hero-metrics" aria-label="Performance summary"><div class="hero-metric"><strong data-total-attempts>0</strong><span>completed exam attempts</span></div><div class="hero-metric"><strong data-net-performance>—</strong><span>net performance</span></div><div class="hero-metric"><strong data-net-improvement>—</strong><span>average improvement</span></div><div class="hero-metric"><strong data-latest-result>—</strong><span>latest exam result</span></div></aside>
+    <div><div class="eyebrow">Sample performance data</div><h1 id="pageTitle">My Performance</h1><p class="lead">Explore example exam attempts, open sample feedback, and compare illustrative raw-score progress across Maths, English, Verbal Reasoning and Non-Verbal Reasoning.</p></div>
+    <aside class="hero-metrics" aria-label="Sample performance summary"><div class="hero-metric"><strong data-total-attempts>0</strong><span>sample exam attempts</span></div><div class="hero-metric"><strong data-net-performance>—</strong><span>sample net performance</span></div><div class="hero-metric"><strong data-net-improvement>—</strong><span>sample average improvement</span></div><div class="hero-metric"><strong data-latest-result>—</strong><span>latest sample exam result</span></div></aside>
   </section>
 
   <section class="card history-card" aria-labelledby="historyTitle">
     <div class="history-head">
-      <div><div class="section-kicker">Full history</div><h2 id="historyTitle">Completed exam attempts</h2><p>Select any completed exam to review its raw score, topic breakdown and question feedback.</p></div>
-      <div class="history-controls"><div class="control"><label for="attemptSubjectFilter">Subject</label><select id="attemptSubjectFilter"><option value="all">All subjects</option><option value="maths">Maths</option><option value="english">English</option><option value="verbal">Verbal Reasoning</option><option value="nonverbal">Non-Verbal Reasoning</option></select></div><span class="result-count" id="attemptResultCount">0 records</span></div>
+      <div><div class="section-kicker">Sample history</div><h2 id="historyTitle">Sample exam attempts</h2><p>Select any sample exam to explore an example raw score, topic breakdown and question-feedback layout.</p></div>
+      <div class="history-controls"><div class="control"><label for="attemptSubjectFilter">Subject</label><select id="attemptSubjectFilter"><option value="all">All subjects</option><option value="maths">Maths</option><option value="english">English</option><option value="verbal">Verbal Reasoning</option><option value="nonverbal">Non-Verbal Reasoning</option></select></div><span class="result-count" id="attemptResultCount">0 sample records</span></div>
     </div>
     <div class="table-wrap"><table class="attempt-table"><thead><tr><th>Date</th><th>Exam</th><th>Subject</th><th>Raw score</th><th>Percentage</th><th>Time</th><th>Change</th><th>Review</th></tr></thead><tbody id="attemptTableBody"></tbody></table></div>
     <div class="mobile-attempts" id="mobileAttempts"></div>
   </section>
 
   <section class="section card trend-card" aria-labelledby="trendTitle">
-    <div class="chart-toolbar"><div class="chart-toolbar-copy"><div class="section-kicker">Scores and dates</div><h2 id="trendTitle">Subject score trend</h2><p>Toggle between four separate graphs. Each point is one completed exam attempt.</p></div><div class="subject-tabs" role="tablist" aria-label="Choose graph subject" id="subjectTabs"></div></div>
+    <div class="chart-toolbar"><div class="chart-toolbar-copy"><div class="section-kicker">Sample scores and dates</div><h2 id="trendTitle">Subject score trend</h2><p>Toggle between four separate graphs. Each point represents one illustrative sample exam attempt.</p></div><div class="subject-tabs" role="tablist" aria-label="Choose graph subject" id="subjectTabs"></div></div>
     <div class="trend-grid"><div class="chart-shell" id="chartShell" aria-live="polite"></div><aside class="subject-metrics" id="subjectMetricPanel"></aside></div>
   </section>
 
-  <section class="section analysis-grid" aria-label="Performance interpretation">
-    <article class="card analysis-panel"><div class="section-kicker">Across subjects</div><h2>Latest subject comparison</h2><p>Latest recorded percentage for each subject, shown on the same 0–100 scale.</p><div class="comparison-list" id="comparisonList"></div></article>
-    <article class="card analysis-panel"><div class="section-kicker">Current priorities</div><h2>Lowest topic averages</h2><p>Topics are ranked using the available topic percentages stored with completed exams.</p><div class="priority-list" id="priorityList"></div></article>
+  <section class="section analysis-grid" aria-label="Sample performance interpretation">
+    <article class="card analysis-panel"><div class="section-kicker">Across subjects</div><h2>Latest subject comparison</h2><p>Latest sample percentage for each subject, shown on the same 0–100 scale.</p><div class="comparison-list" id="comparisonList"></div></article>
+    <article class="card analysis-panel"><div class="section-kicker">Example priorities</div><h2>Lowest topic averages</h2><p>Topics are ranked using the illustrative percentages in the sample exam records.</p><div class="priority-list" id="priorityList"></div></article>
   </section>
 </main>
 
-<dialog class="result-dialog" id="attemptDialog" aria-labelledby="dialogTitle"><div class="dialog-shell"><div class="dialog-head"><div><h2 id="dialogTitle">Exam result</h2><p id="dialogSubtitle"></p></div><form method="dialog"><button class="dialog-close" type="submit" aria-label="Close results">×</button></form></div><div class="dialog-body" id="dialogBody"></div></div></dialog>
+<dialog class="result-dialog" id="attemptDialog" aria-labelledby="dialogTitle"><div class="dialog-shell"><div class="dialog-head"><div><h2 id="dialogTitle">Sample exam result</h2><p id="dialogSubtitle"></p></div><form method="dialog"><button class="dialog-close" type="submit" aria-label="Close results">×</button></form></div><div class="dialog-body" id="dialogBody"></div></div></dialog>
 
-<aside class="developer-notes"><strong>Developer notes — do not include on real pages</strong>
-<p><b>Prototype inputs:</b> this page scans compatible browser-storage records and otherwise uses labelled sample exam attempts. Its totals, changes, filters, graphs and priorities are deterministic JavaScript calculations and do not use AI.</p>
-<p><b>Suggested production data contract:</b> fetch exam attempts for the authenticated account from the backend. Each record should include attempt ID, exam ID and version, subject, completion date, raw score, available marks, percentage, answered and unanswered counts, duration, topic-level totals, question-level answers, correct answers and stored feedback.</p>
-<p><b>Update flow:</b> refresh after a successful exam submission, when filters change, on page load and when the backend result version changes. Paginate large histories and perform account ownership checks on every attempt-detail request. Never trust a learner ID supplied by the browser.</p>
-<p><b>Production access:</b> protect summary and attempt-detail APIs with the real authenticated session. Logout must revoke that session and return to the production login route. The current GitHub destinations exist only to demonstrate this prototype.</p></aside>
 </div>
   <script>
 const MATHBASE_ROUTES = Object.freeze({"dashboard": "https://mathbase1.github.io/11-plus-dashboard/", "practice": "https://mathbase1.github.io/11-plus-practice-menu/", "exams": "https://mathbase1.github.io/11-plus-exams-menu/", "performance": "https://mathbase1.github.io/data/", "login": "https://mathbase1.github.io/11plus-pem/", "mathsPractice": "https://mathbase1.github.io/11plus-practice-quest/", "englishPractice": "https://mathbase1.github.io/eleven-plus-English-practice/", "verbalPractice": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/", "nonverbalPractice": "https://mathbase1.github.io/nvr-prac/", "mathsExam": "https://mathbase1.github.io/11plus-exam/", "englishExam": "https://mathbase1.github.io/eleven-plus-English-exam/", "verbalExam": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/", "nonverbalExam": "https://mathbase1.github.io/nvr-exam/"});
@@ -577,28 +603,12 @@ function collectPossibleAttemptArrays(parsed) {
 }
 
 function loadExamAttempts() {
-  const live = [];
-  try {
-    if (Array.isArray(window.MATHBASE_EXAM_ATTEMPTS)) {
-      window.MATHBASE_EXAM_ATTEMPTS.forEach((raw, index) => { const item = normaliseAttempt(raw, index, "injected"); if (item) live.push(item); });
-    }
-    for (let keyIndex = 0; keyIndex < localStorage.length; keyIndex += 1) {
-      const key = localStorage.key(keyIndex);
-      if (!key) continue;
-      let parsed;
-      try { parsed = JSON.parse(localStorage.getItem(key)); } catch (error) { continue; }
-      collectPossibleAttemptArrays(parsed).forEach((array) => {
-        array.forEach((raw, index) => { const item = normaliseAttempt(raw, index, key); if (item) live.push(item); });
-      });
-    }
-  } catch (error) { /* Sample records remain available. */ }
-  const unique = new Map();
-  live.forEach((attempt) => {
-    const signature = attempt.id || [attempt.date, attempt.subject, attempt.score, attempt.total, attempt.paper].join("|");
-    if (!unique.has(signature)) unique.set(signature, attempt);
-  });
-  const attempts = unique.size ? Array.from(unique.values()) : DEMO_ATTEMPTS.map((item) => ({ ...item }));
-  return attempts.sort((a, b) => new Date(a.date) - new Date(b.date));
+  return DEMO_ATTEMPTS.map((item) => ({
+    ...item,
+    topics: { ...item.topics },
+    areasToImprove: [...item.areasToImprove],
+    strengths: [...item.strengths]
+  })).sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
 function percentageOf(attempt) { return attempt && attempt.total ? (Number(attempt.score) / Number(attempt.total)) * 100 : 0; }
@@ -684,28 +694,28 @@ function changeForAttempt(attempt) {
 function renderHistory() {
   const filter = document.getElementById("attemptSubjectFilter").value;
   const list = performanceAttempts.filter((attempt) => filter === "all" || attempt.subject === filter).sort((a,b) => new Date(b.date) - new Date(a.date));
-  document.getElementById("attemptResultCount").textContent = `${list.length} record${list.length === 1 ? "" : "s"}`;
+  document.getElementById("attemptResultCount").textContent = `${list.length} sample record${list.length === 1 ? "" : "s"}`;
   const body = document.getElementById("attemptTableBody");
   body.innerHTML = list.length ? list.map((attempt) => {
     const config = SUBJECTS[attempt.subject];
     const pct = round(percentageOf(attempt));
     const change = changeForAttempt(attempt);
-    return `<tr tabindex="0" data-attempt-id="${escapeHtml(attempt.id)}" aria-label="View ${escapeHtml(config.name)} result from ${formatDate(attempt.date)}">
+    return `<tr tabindex="0" data-attempt-id="${escapeHtml(attempt.id)}" aria-label="View sample ${escapeHtml(config.name)} result from ${formatDate(attempt.date)}">
       <td>${formatDate(attempt.date)}</td>
       <td class="exam-cell"><strong>${escapeHtml(attempt.paper)}</strong><span>${escapeHtml(attempt.paperId)}</span></td>
       <td><span class="subject-cell"><span class="subject-dot" style="--dot:${config.accent}"></span>${escapeHtml(config.name)}</span></td>
       <td class="score-cell"><strong>${round(attempt.score)}/${round(attempt.total)}</strong></td>
       <td>${pct}%</td><td>${formatDuration(attempt.durationMinutes)}</td>
       <td style="color:${change === null || change >= 0 ? "#047857" : "#b42318"};font-weight:850">${change === null ? "Baseline" : signed(change)}</td>
-      <td><button class="view-button" type="button" data-view-attempt="${escapeHtml(attempt.id)}">View results</button></td>
+      <td><button class="view-button" type="button" data-view-attempt="${escapeHtml(attempt.id)}">View sample results</button></td>
     </tr>`;
-  }).join("") : '<tr><td colspan="8">No completed exam attempts match this filter.</td></tr>';
+  }).join("") : '<tr><td colspan="8">No sample exam attempts match this filter.</td></tr>';
 
   document.getElementById("mobileAttempts").innerHTML = list.map((attempt) => {
     const config = SUBJECTS[attempt.subject];
     const pct = round(percentageOf(attempt));
     const change = changeForAttempt(attempt);
-    return `<article class="mobile-attempt-card"><div class="mobile-attempt-head"><div><strong>${escapeHtml(config.name)}</strong><span>${formatDate(attempt.date)} · ${escapeHtml(attempt.paperId)}</span></div><span class="pill ${statusForPercentage(pct).className}">${statusForPercentage(pct).label}</span></div><div class="mobile-attempt-stats"><div><strong>${round(attempt.score)}/${round(attempt.total)}</strong><span>raw score</span></div><div><strong>${pct}%</strong><span>percentage</span></div><div><strong>${change === null ? "Baseline" : signed(change)}</strong><span>movement</span></div></div><button class="view-button" type="button" data-view-attempt="${escapeHtml(attempt.id)}">View results and feedback</button></article>`;
+    return `<article class="mobile-attempt-card"><div class="mobile-attempt-head"><div><strong>${escapeHtml(config.name)}</strong><span>${formatDate(attempt.date)} · ${escapeHtml(attempt.paperId)}</span></div><span class="pill ${statusForPercentage(pct).className}">${statusForPercentage(pct).label}</span></div><div class="mobile-attempt-stats"><div><strong>${round(attempt.score)}/${round(attempt.total)}</strong><span>raw score</span></div><div><strong>${pct}%</strong><span>percentage</span></div><div><strong>${change === null ? "Baseline" : signed(change)}</strong><span>movement</span></div></div><button class="view-button" type="button" data-view-attempt="${escapeHtml(attempt.id)}">View sample results and feedback</button></article>`;
   }).join("");
 }
 
@@ -718,7 +728,7 @@ function buildTrendSvg(subject) {
   const config = SUBJECTS[subject];
   const metrics = subjectAttemptMetrics(performanceAttempts, subject);
   const list = metrics.list;
-  if (!list.length) return `<div style="padding:30px;color:#667085">No ${escapeHtml(config.name)} exam records are available.</div>`;
+  if (!list.length) return `<div style="padding:30px;color:#667085">No ${escapeHtml(config.name)} sample exam records are available.</div>`;
   const width = 760, height = 310, left = 55, right = 26, top = 28, bottom = 54;
   const innerW = width - left - right, innerH = height - top - bottom;
   const xAt = (index) => list.length === 1 ? left + innerW / 2 : left + (index / (list.length - 1)) * innerW;
@@ -727,7 +737,7 @@ function buildTrendSvg(subject) {
   const points = list.map((attempt,index) => `${xAt(index)},${yAt(percentageOf(attempt))}`).join(" ");
   const areaPoints = `${left},${yAt(0)} ${points} ${width-right},${yAt(0)}`;
   const pointMarkup = list.map((attempt,index) => { const pct=round(percentageOf(attempt)); return `<circle cx="${xAt(index)}" cy="${yAt(pct)}" r="6" fill="#fff" stroke="${config.accent}" stroke-width="3"><title>${pct}% on ${formatDate(attempt.date)}</title></circle><text x="${xAt(index)}" y="${yAt(pct)-12}" text-anchor="middle" class="chart-point-label" style="--chart-accent:${config.accent}">${pct}%</text><text x="${xAt(index)}" y="${height-19}" text-anchor="middle" class="chart-axis">${formatDate(attempt.date,true)}</text>`; }).join("");
-  return `<svg class="trend-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(config.name)} exam percentages over time"><defs><linearGradient id="trendArea-${subject}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${config.accent}" stop-opacity=".2"></stop><stop offset="1" stop-color="${config.accent}" stop-opacity=".02"></stop></linearGradient></defs>${grid}<polygon points="${areaPoints}" fill="url(#trendArea-${subject})"></polygon><polyline points="${points}" fill="none" stroke="${config.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>${pointMarkup}</svg>`;
+  return `<svg class="trend-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(config.name)} sample exam percentages over time"><defs><linearGradient id="trendArea-${subject}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${config.accent}" stop-opacity=".2"></stop><stop offset="1" stop-color="${config.accent}" stop-opacity=".02"></stop></linearGradient></defs>${grid}<polygon points="${areaPoints}" fill="url(#trendArea-${subject})"></polygon><polyline points="${points}" fill="none" stroke="${config.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>${pointMarkup}</svg>`;
 }
 
 function renderTrend() {
@@ -736,12 +746,12 @@ function renderTrend() {
   const config = SUBJECTS[activeGraphSubject];
   const metrics = subjectAttemptMetrics(performanceAttempts, activeGraphSubject);
   document.getElementById("subjectMetricPanel").innerHTML = `
-    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.latestPercentage) + "%" : "—"}</strong><span>Latest ${config.name} score</span></div>
-    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.average) + "%" : "—"}</strong><span>Average across ${metrics.list.length} attempt${metrics.list.length === 1 ? "" : "s"}</span></div>
-    <div class="metric-tile"><strong>${metrics.list.length > 1 ? signed(metrics.improvement) : "Baseline"}</strong><span>First-to-latest improvement</span></div>
-    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.best) + "%" : "—"}</strong><span>Best recorded result</span></div>
-    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.range,1) + " pp" : "—"}</strong><span>Score range</span></div>
-    <div class="metric-tile"><strong>${Number.isFinite(metrics.averageTime) ? formatDuration(metrics.averageTime) : "—"}</strong><span>Average time used</span></div>`;
+    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.latestPercentage) + "%" : "—"}</strong><span>Latest sample ${config.name} score</span></div>
+    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.average) + "%" : "—"}</strong><span>Average across ${metrics.list.length} sample attempt${metrics.list.length === 1 ? "" : "s"}</span></div>
+    <div class="metric-tile"><strong>${metrics.list.length > 1 ? signed(metrics.improvement) : "Baseline"}</strong><span>First-to-latest sample improvement</span></div>
+    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.best) + "%" : "—"}</strong><span>Best sample result</span></div>
+    <div class="metric-tile"><strong>${metrics.list.length ? round(metrics.range,1) + " pp" : "—"}</strong><span>Sample score range</span></div>
+    <div class="metric-tile"><strong>${Number.isFinite(metrics.averageTime) ? formatDuration(metrics.averageTime) : "—"}</strong><span>Sample average time used</span></div>`;
 }
 
 function renderAnalysis() {
@@ -750,7 +760,7 @@ function renderAnalysis() {
     return `<div class="comparison-row"><span>${config.name}</span><div class="progress-track"><i style="--width:${clamp(metrics.latestPercentage,0,100)}%;background:${config.accent}"></i></div><strong>${metrics.list.length ? round(metrics.latestPercentage) + "%" : "—"}</strong></div>`;
   }).join("");
   const priorities = overallMetrics(performanceAttempts).topicAverages.slice(0,5);
-  document.getElementById("priorityList").innerHTML = priorities.length ? priorities.map((item) => `<div class="priority-item"><div class="priority-head"><strong>${escapeHtml(item.topic)}</strong><span>${round(item.value)}%</span></div><div class="progress-track"><i style="--width:${clamp(item.value,0,100)}%;background:linear-gradient(90deg,#b45309,#d97706)"></i></div></div>`).join("") : '<p>No topic-level exam data is available.</p>';
+  document.getElementById("priorityList").innerHTML = priorities.length ? priorities.map((item) => `<div class="priority-item"><div class="priority-head"><strong>${escapeHtml(item.topic)}</strong><span>${round(item.value)}%</span></div><div class="progress-track"><i style="--width:${clamp(item.value,0,100)}%;background:linear-gradient(90deg,#b45309,#d97706)"></i></div></div>`).join("") : '<p>No sample topic-level data is available.</p>';
 }
 
 function buildQuestionReview(attempt) {
@@ -769,15 +779,17 @@ function openAttempt(attemptId) {
   const config = SUBJECTS[attempt.subject];
   const pct = round(percentageOf(attempt));
   const change = changeForAttempt(attempt);
-  document.getElementById("dialogTitle").textContent = `${config.name} exam result`;
-  document.getElementById("dialogSubtitle").textContent = `${formatDate(attempt.date)} · ${attempt.paperId}`;
+  document.getElementById("dialogTitle").textContent = `${config.name} sample exam result`;
+  document.getElementById("dialogSubtitle").textContent = `Sample data · ${formatDate(attempt.date)} · ${attempt.paperId}`;
   const topicRows = Object.entries(attempt.topics || {}).sort((a,b) => a[1]-b[1]).map(([topic,value]) => `<div class="topic-row"><span>${escapeHtml(topic)}</span><div class="progress-track"><i style="--width:${clamp(value,0,100)}%;background:${config.accent}"></i></div><strong>${round(value)}%</strong></div>`).join("");
   const questions = buildQuestionReview(attempt);
   const questionRows = questions.map((item) => `<tr><td>${item.number}</td><td><strong>${escapeHtml(item.topic)}</strong><br>${escapeHtml(item.prompt)}</td><td>${escapeHtml(item.student)}</td><td>${escapeHtml(item.correct)}</td><td><span class="pill ${item.correctOutcome ? "good" : "warn"}">${item.correctOutcome ? "Correct" : "Review"}</span></td><td>${item.correctOutcome ? "Accurate response." : escapeHtml(item.feedback)}</td></tr>`).join("");
   document.getElementById("dialogBody").innerHTML = `
-    <div class="dialog-kpis"><div class="dialog-kpi"><strong>${round(attempt.score)}/${round(attempt.total)}</strong><span>Raw score</span></div><div class="dialog-kpi"><strong>${pct}%</strong><span>Percentage</span></div><div class="dialog-kpi"><strong>${change === null ? "Baseline" : signed(change)}</strong><span>Change from previous ${config.name} attempt</span></div><div class="dialog-kpi"><strong>${formatDuration(attempt.durationMinutes)}</strong><span>Time used</span></div></div>
-    <div class="dialog-grid"><section class="dialog-section"><h3>Topic breakdown</h3><div class="topic-list">${topicRows || '<p>No topic scores were stored.</p>'}</div></section><section class="dialog-section"><h3>Stored feedback</h3><p class="feedback-quote">${escapeHtml(attempt.feedback)}</p><h3 style="margin-top:14px">Strengths</h3><div class="tag-list">${(attempt.strengths || []).map((item) => `<span class="tag good">${escapeHtml(item)}</span>`).join("") || '<span class="tag">No strengths stored</span>'}</div><h3 style="margin-top:14px">Areas to work on</h3><div class="tag-list">${(attempt.areasToImprove || []).map((item) => `<span class="tag warn">${escapeHtml(item)}</span>`).join("") || '<span class="tag">No priorities stored</span>'}</div></section></div>
-    <div class="question-review"><table class="question-table"><thead><tr><th>Q</th><th>Question area</th><th>Learner answer</th><th>Correct answer</th><th>Outcome</th><th>Feedback</th></tr></thead><tbody>${questionRows}</tbody></table></div>`;
+    <div class="sample-dialog-note" role="note"><strong>SAMPLE DATA — PRODUCT PREVIEW</strong>These scores, timings, topic breakdowns and feedback are illustrative examples, not a real learner record.</div>
+    <div class="dialog-kpis"><div class="dialog-kpi"><strong>${round(attempt.score)}/${round(attempt.total)}</strong><span>Raw score</span></div><div class="dialog-kpi"><strong>${pct}%</strong><span>Percentage</span></div><div class="dialog-kpi"><strong>${change === null ? "Baseline" : signed(change)}</strong><span>Change from previous sample ${config.name} attempt</span></div><div class="dialog-kpi"><strong>${formatDuration(attempt.durationMinutes)}</strong><span>Time used</span></div></div>
+    <div class="dialog-grid"><section class="dialog-section"><h3>Sample topic breakdown</h3><div class="topic-list">${topicRows || '<p>No topic scores were stored.</p>'}</div></section><section class="dialog-section"><h3>Example feedback</h3><p class="feedback-quote">${escapeHtml(attempt.feedback)}</p><h3 style="margin-top:14px">Example strengths</h3><div class="tag-list">${(attempt.strengths || []).map((item) => `<span class="tag good">${escapeHtml(item)}</span>`).join("") || '<span class="tag">No strengths stored</span>'}</div><h3 style="margin-top:14px">Example areas to work on</h3><div class="tag-list">${(attempt.areasToImprove || []).map((item) => `<span class="tag warn">${escapeHtml(item)}</span>`).join("") || '<span class="tag">No priorities stored</span>'}</div></section></div>
+    <p class="sample-review-note"><strong>Illustrative question-feedback examples.</strong> These five examples demonstrate the review layout. They are not a complete exam paper and do not add up to the overall sample score.</p>
+    <div class="question-review"><table class="question-table"><thead><tr><th>Q</th><th>Question area</th><th>Example learner answer</th><th>Correct answer</th><th>Outcome</th><th>Feedback</th></tr></thead><tbody>${questionRows}</tbody></table></div>`;
   const dialog = document.getElementById("attemptDialog");
   if (typeof dialog.showModal === "function") dialog.showModal(); else dialog.setAttribute("open", "");
 }
